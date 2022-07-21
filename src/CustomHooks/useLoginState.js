@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import Cookies from 'js-cookie';
 import axios from "axios";
+import Cookies from 'js-cookie';
+import { useEffect, useState } from 'react';
 
 async function getLoginState() {
     const jwt = Cookies.get("jwt");

@@ -1,61 +1,52 @@
 import { TextField } from '@mui/material';
 import axios from 'axios';
-import Cookies from 'js-cookie';
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 import { useHttpClient } from '../../../../CustomHooks/httpClient';
 import "./HosoDetailMain.css";
-import maChuyenNganh from "../../../../Data/maChuyenNganh.json";
  
-const token = Cookies.get("jwt");
-
-const config = {
-    headers: {
-        "Authorization" : `Bearer ${token}`
-    }
-}
 
 export default function HosoDetailMain() {
     const {id} = useParams();
     const [urls, setUrls] = useState([]);
 
     const {data} = useHttpClient(`https:localhost:7210/api/StudentInfo/${id}`);
-    const {data: nganhs} = useHttpClient("https:localhost:7210/api/Nganh");
 
-    const getPresignedUrls = () => {
-        axios.post(`https://localhost:7210/api/AwsS3Upload/presignedUrls`, [
-            {
-                label: "Anh 3x4",
-                key: data.anh3x4_Key
-            },
-            {
-                label: "Scan CCCD/CMND",
-                key: data.scanCCCD_Key
-            },
-            {
-                label: "Ban Scan Doi Tuong",
-                key: data.scanDoiTuong_Key
-            },
-            {
-                label: "Ban Scan Khu Vuc",
-                key: data.scanKhuVuc_Key
-            },
-            {
-                label: "Ban Scan Hoc Ba",
-                key: data.scanHocBa_Key
-            }
-        ])
-        .then(res => {setUrls(res.data)
-        console.log("res" ,res)})
-        .catch(err => console.log(err))
-    }
 
 
     console.log("URLS", urls)
 
 
     useEffect(() => {
+        const getPresignedUrls = () => {
+            axios.post(`https://localhost:7210/api/AwsS3Upload/presignedUrls`, [
+                {
+                    label: "Anh 3x4",
+                    key: data.anh3x4_Key
+                },
+                {
+                    label: "Scan CCCD/CMND",
+                    key: data.scanCCCD_Key
+                },
+                {
+                    label: "Ban Scan Doi Tuong",
+                    key: data.scanDoiTuong_Key
+                },
+                {
+                    label: "Ban Scan Khu Vuc",
+                    key: data.scanKhuVuc_Key
+                },
+                {
+                    label: "Ban Scan Hoc Ba",
+                    key: data.scanHocBa_Key
+                }
+            ])
+            .then(res => {setUrls(res.data)
+            console.log("res" ,res)})
+            .catch(err => console.log(err))
+        }
+    
+
         if(data.length !== 0)
         {
             console.log( "dsa",data);
@@ -248,7 +239,7 @@ export default function HosoDetailMain() {
                 <div className='content-wrapper'>
                     {urls?.map((item, index) => (
                         <div className='row' key={index}>
-                            <div className='row-data'><a target="_blank" href={item?.presignedUrl}>{item.label}</a></div>
+                            <div className='row-data'><a target="_blank" rel='noreferrer' href={item?.presignedUrl}>{item.label}</a></div>
                         </div>
                     ))}
 

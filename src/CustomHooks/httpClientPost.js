@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import Cookies from "js-cookie"
+import Cookies from "js-cookie";
+import { useState } from 'react';
 
 const token = Cookies.get("jwt");
 

@@ -33,7 +33,7 @@ export default function AutoCompleteWrapper({
     form,
     ...otherProps
 }) {
-    const {setFieldValue, touched ,setTouched} = useFormikContext();
+    const {setFieldValue} = useFormikContext();
     const [field, meta] = useField(name);
 
     const config = {

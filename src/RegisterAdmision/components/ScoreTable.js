@@ -1,5 +1,5 @@
 import { Paper, Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
-import { FastField, useFormikContext } from 'formik'
+import { FastField } from 'formik'
 import React from 'react'
 import CustomField from '../../components/FormUI/CustomField'
 
@@ -117,7 +117,7 @@ export default function ScoreTable({values}) {
     // const { setFieldValue, values } = useFormikContext();
 
     let listToHop = [];
-    values.studentNguyenVongsDto.map((item) => {
+    values.studentNguyenVongsDto.forEach((item) => {
         if(listToHop.indexOf(item.maToHop) === -1)
         {
             listToHop.push(item.maToHop);

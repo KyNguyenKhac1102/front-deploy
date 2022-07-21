@@ -9,7 +9,7 @@ const CustomDatePicker = ({
     name,
     ...otherProps
 }) => {
-    const [field, meta] = useField(name);
+    const [meta] = useField(name);
     const formik = useFormikContext();
 
     const config = {

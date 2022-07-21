@@ -1,6 +1,6 @@
-import React from 'react'
-import { InputLabel, TextField } from '@mui/material'
-import {useField} from "formik";
+import { TextField } from '@mui/material';
+import { useField } from "formik";
+import React from 'react';
 
 
 export default function Textfield({
@@ -9,7 +9,7 @@ export default function Textfield({
     shrink,
     ...otherProps
 }) {
-    const [field, meta, helpers] = useField(name);
+    const [field, meta] = useField(name);
     
     const config = {
         ...field,

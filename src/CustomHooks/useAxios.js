@@ -36,7 +36,7 @@ const useAxios = (configObj) =>
 
         return () => controller.abort();
 
-    }, [setResponse, url, setLoading])
+    }, [setResponse, url, setLoading, axiosInstance, method, requestConfig])
 
     return [response, loading, error];
 }

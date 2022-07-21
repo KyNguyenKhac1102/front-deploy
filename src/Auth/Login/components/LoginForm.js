@@ -1,25 +1,13 @@
 import { Button, Grid } from '@mui/material';
-import { Form, Formik } from 'formik';
-import React, { useState } from 'react'
-import BackdropCustom from '../../../components/FormUI/Loading/BackdropCustom';
-import Textfield from '../../../components/FormUI/Textfield';
 import axios from "axios";
-import * as yup from "yup";
+import { Form, Formik } from 'formik';
 import Cookies from 'js-cookie';
-import { useNavigate } from 'react-router';
-import "./LoginForm.css"
+import React, { useState } from 'react';
+import BackdropCustom from '../../../components/FormUI/Loading/BackdropCustom';
 import TextfieldServer from '../../../components/FormUI/TextFieldServer';
+import "./LoginForm.css";
 
 axios.defaults.withCredentials = true;
-
-const INIT_LOGIN_VALIDATION = yup.object().shape({
-  email: yup.string("Enter your email")
-  .email("Enter valid email")
-  .required("Required"),
-  password: yup.string("Enter your password")
-  .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/, "Password must contain Minimum 6 characters, at least one uppercase letter, one lowercase letter, one number and one special character")
-  .required("Password required"),
-}) 
 
 const INIT_LOGIN_STATE = {
   email: "admin@gmail.com",
@@ -28,7 +16,6 @@ const INIT_LOGIN_STATE = {
 
 export default function LoginForm({setUserData, setIsLoading, isLoading}) {
     const [errMessage, setErrMessage] = useState(null);
-    let navigate = useNavigate()
 
     const handleRedirectByRole = (roles) => {
         if(roles.includes("Admin") && roles.length === 1)
@@ -40,6 +27,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
           window.location.href = "/";
         }else if(roles.includes("Admin") && roles.includes("User"))
         {
+          console.log("login re check")
           // navigate("/dashboard");
           window.location.href = "/dashboard";
         }else{

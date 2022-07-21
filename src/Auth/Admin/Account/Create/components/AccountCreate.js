@@ -1,15 +1,14 @@
 import { Button, Grid } from '@mui/material';
 import axios from 'axios';
-import { Form, Formik } from 'formik'
+import { Form, Formik } from 'formik';
 import Cookies from 'js-cookie';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import * as yup from "yup";
 import SelectWrapper from '../../../../../components/FormUI/Select';
-import Textfield from '../../../../../components/FormUI/Textfield'
+import Textfield from '../../../../../components/FormUI/Textfield';
 import Toast from '../../../../../components/FormUI/Toast';
 import { useHttpClient } from '../../../../../CustomHooks/httpClient';
-import useAxios from '../../../../../CustomHooks/useAxios';
-import "./AccountCreate.css"
+import "./AccountCreate.css";
 
 const token = Cookies.get('jwt');
 
@@ -32,9 +31,6 @@ const INIT_VALIDATE = yup.object().shape({
     role: yup.string().required("Required"),
 })
 
-const options = [
-    {id: "Admin", }
-]
 
 export default function AccountCreate() {
 
@@ -50,9 +46,14 @@ export default function AccountCreate() {
 
     const {data: roles} = useHttpClient("https://localhost:7210/roles");
     let options = {};
-    roles.map((item) => {
-        options[item.name] = item.name;
+
+    roles.forEach(item => {
+        options[item.name] = item.name
     })
+
+    // roles.map((item) => (
+    //     options[item.name] = item.name
+    // ))
 
     const handleCreate = (values) => {
         axios.post("https://localhost:7210/account/create", values, {

@@ -1,12 +1,10 @@
 import { Button, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import { Link, useNavigate } from 'react-router-dom';
-import { useHttpClient } from '../../../../CustomHooks/httpClient';
-import Cookies from 'js-cookie';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
-import { useHttpRequest } from '../../../../CustomHooks/httpRequest';
+import Cookies from 'js-cookie';
+import { useCallback, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const token = Cookies.get("jwt");
@@ -65,7 +63,6 @@ export default function HosoMain() {
     }
   ]
   
-  let navigate = useNavigate();
 
   const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -87,7 +84,7 @@ const serverDelete = (id) => {
   .catch(err => console.log(err))
 }
 
-const getServerData = () => {
+const getServerData = useCallback(() => {
   setLoading(true);
   axios.get("https://localhost:7210/api/StudentInfo/hosos", config)
   .then(res => {
@@ -95,11 +92,11 @@ const getServerData = () => {
     setLoading(false);
   })
   .catch(err => console.log(err));
-}
+}, [config])
 
   useEffect(() => {
     getServerData();
-  }, [setTableData])
+  }, [setTableData, getServerData])
 
   // let rows = data;
 

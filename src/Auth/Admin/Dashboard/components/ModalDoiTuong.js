@@ -1,5 +1,4 @@
 import { Box, Modal } from '@mui/material';
-import { useHttpClient } from '../../../../CustomHooks/httpClient';
 import ModalDoiTuongChart from './ModalDoiTuongChart';
 
 
@@ -18,7 +17,6 @@ const style = {
   };
 
 export default function ModalNganh({open, setOpen}) {
-    const {data: hosoperNganh} = useHttpClient('https://localhost:7210/api/TongHop/HosoperNganh');
     const hanldeClose = () => {
         setOpen(false);
     }

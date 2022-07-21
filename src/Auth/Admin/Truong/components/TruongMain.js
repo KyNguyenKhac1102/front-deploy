@@ -1,9 +1,8 @@
 import { Box, Typography } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import React, { useState } from 'react'
-import { useHttpClient } from '../../../../CustomHooks/httpClient'
+import axios from '../../../../api/Truong'
 import useAxios from '../../../../CustomHooks/useAxios'
-import axios from '../../../../api/Truong';
 
 const columns = [
     {field: 'id', headerName: "Id", width: 100},
@@ -32,7 +31,7 @@ export default function TruongMain() {
     const [numperPage, setNumperPage] = useState(20);
     // const  {data: truongData, isLoaded} = useHttpClient(`https://localhost:7210/api/Truong/admin?sortOrder=${sort}&searchTruong=${search}&page=${page}`);
 
-    const [response, loading, error] = useAxios({
+    const [response, loading] = useAxios({
         axiosInstance: axios,
         method: "GET",
         url: `admin?sortOrder=${sort}&searchTruong=${search}&page=${page}`,
@@ -43,7 +42,6 @@ export default function TruongMain() {
     });
 
     console.log("loadugas", loading)
-
     // console.log("resmain", response);
 
     // let rows = [];

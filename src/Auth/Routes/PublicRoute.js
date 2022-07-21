@@ -17,13 +17,14 @@ export default function PublicRoute({userData, children}) {
           navigate("/");
         }else if(roles.includes("Admin") && roles.includes("User"))
         {
+          console.log("pub check")
           //implement choosing role page...
           navigate("/dashboard");
         }else{
           navigate("/login");
         }
       }
-    })
+    }, [userData, navigate])
     if(userData === undefined)
     {
       return <></>

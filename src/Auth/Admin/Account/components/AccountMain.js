@@ -1,8 +1,6 @@
 import { Button, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
-import axios from 'axios';
-import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useHttpClient } from '../../../../CustomHooks/httpClient';
 

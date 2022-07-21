@@ -1,33 +1,29 @@
-import React, { useEffect, useState } from 'react'
-import * as yup from 'yup';
-import  {Formik, Form, FieldArray, FastField, useFormikContext } from 'formik';
-import Textfield from '../../components/FormUI/Textfield';
-import { Alert, Box, Button, CircularProgress, Grid, Input, Paper, Snackbar, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, Typography } from '@mui/material';
 import ClearIcon from '@mui/icons-material/Clear';
+import { Box, Button, CircularProgress, Grid, Typography } from '@mui/material';
+import { FastField, FieldArray, Form, Formik } from 'formik';
+import React, { useState } from 'react';
+import * as yup from 'yup';
 import SelectWrapper from '../../components/FormUI/Select';
+import Textfield from '../../components/FormUI/Textfield';
 
-import gioiTinh from "../../Data/gioiTinh.json";
 import doiTuongUuTien from "../../Data/doiTuongUuTien.json";
+import gioiTinh from "../../Data/gioiTinh.json";
 import khuVucUuTien from "../../Data/khuVucUuTien.json";
 
-import CustomField from '../../components/FormUI/CustomField';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import CustomDatePicker from '../../components/FormUI/DatePicker';
-import { styled } from '@mui/material/styles';
-import { green, red } from '@mui/material/colors';
-import AutoCompleteWrapper from '../../components/FormUI/AutoComplete';
-import {HttpClient1, useHttpClient} from '../../CustomHooks/httpClient';
+import axios from 'axios';
 import Cookies from 'js-cookie';
+import AutoCompleteWrapper from '../../components/FormUI/AutoComplete';
+import CustomField from '../../components/FormUI/CustomField';
+import CustomSelect from '../../components/FormUI/CustomSelect';
+import CustomDatePicker from '../../components/FormUI/DatePicker';
 import DependenceField from '../../components/FormUI/DependenceField';
 import DependenceField11 from '../../components/FormUI/DependenceField/index11';
 import DependenceField12 from '../../components/FormUI/DependenceField/index12';
-import CustomSelect from '../../components/FormUI/CustomSelect';
+import Toast from '../../components/FormUI/Toast';
+import { useHttpClient } from '../../CustomHooks/httpClient';
 import ScoreTable from './ScoreTable';
 import UploadFiles from './UploadFiles';
-import httpRequest from '../../CustomHooks/httpRequest';
-import axios from 'axios';
-import { useHttpClientPost } from '../../CustomHooks/httpClientPost';
-import Toast from '../../components/FormUI/Toast';
 // import { useHttpClientPost } from '../../CustomHooks/httpClientPost';
 
 const token = Cookies.get("jwt");
@@ -58,24 +54,14 @@ const emptyNv = {
     maToHop: "",
 }
 
-const emptyTruong = {
-  id: "",
-  tenTruong: "",
-  diaChi: "",
-  maKhuVuc: "",
-  maTinh: "",
-  normalizedName: "",
-}
-
-const options = [];
 
 const hanldeJsonData = (data) => {
   let jsonNganh = {
   
   };
-  data.map((item) => {
+  data.forEach((item) => (
     jsonNganh[item.maNganh] = item.tenNganh
-  })
+  ))
   return jsonNganh;
 }
 
@@ -229,8 +215,7 @@ export default function RegisterForm({userId}) {
 
   const [page, setPage] = useState(1);
   const [searchKey, setSearchKey] = useState("");
-  const [open, setOpen] = useState(false);
-  const [toastMessage, setToastMessage] = useState("");
+
 
   const [toastState, setToastState] = useState({
     open: false,
@@ -244,7 +229,7 @@ export default function RegisterForm({userId}) {
 
   // const {data: user} = useHttpClient("https://localhost:7210/login/cookie");
   // setUserData(user);
-  const {data : truongData, isLoaded, error} = useHttpClient(`https://localhost:7210/api/Truong?page=${page}&searchTruong=${searchKey}`);
+  const {data : truongData} = useHttpClient(`https://localhost:7210/api/Truong?page=${page}&searchTruong=${searchKey}`);
   const {data : nganhData} = useHttpClient("https://localhost:7210/api/Nganh");
 
   const optionNganh = hanldeJsonData(nganhData);

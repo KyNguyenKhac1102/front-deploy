@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
 import axios from 'axios';
-import Cookies from "js-cookie"
+import Cookies from "js-cookie";
+import { useEffect, useState } from 'react';
 
 const token = Cookies.get('jwt');
 
@@ -20,7 +20,6 @@ export const useHttpClient = url => {
     useEffect(() => {
         const controller = new AbortController();
 
-        const signal = controller.signal;
         setIsLoaded(true);
 
         axios.get(url, {

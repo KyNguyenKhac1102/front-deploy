@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from 'react';
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import RegisterPage from './Auth/RegisterPage';
 import Home from './RegisterAdmision/Home';
 
@@ -8,43 +8,25 @@ import Cookies from 'js-cookie';
 import AccessDenied from './Auth/AccessDenied';
 
 import AccountPage from "./Auth/Admin/Account/AccountPage";
+import AccountCreatePage from "./Auth/Admin/Account/Create/AccountCreatePage";
 import Dashboard from "./Auth/Admin/Dashboard/Dashboard";
+import HosoDetailPage from "./Auth/Admin/Hoso/HosoDetailPage";
+import HosoPage from "./Auth/Admin/Hoso/HosoPage";
+import TruongPage from "./Auth/Admin/Truong/TruongPage";
 import LoginPage from './Auth/Login/LoginPage';
 import PrivateRoute from './Auth/Routes/PrivateRoute';
 import PublicRoute from './Auth/Routes/PublicRoute';
 import BackdropCustom from './components/FormUI/Loading/BackdropCustom';
 import NotFound from './NotFound';
-import AccountCreatePage from "./Auth/Admin/Account/Create/AccountCreatePage";
-import HosoPage from "./Auth/Admin/Hoso/HosoPage";
-import HosoDetailPage from "./Auth/Admin/Hoso/HosoDetailPage";
-import TruongPage from "./Auth/Admin/Truong/TruongPage";
 
 
 export default function App() {
-  let navigate = useNavigate()
 
-  const [isAuthenticated, setIsAuthenticated] = useState(null);
+
   const [isLoading, setIsLoading] = useState(false);
 
   
   const [userData, setUserData] = useState(undefined)
-
-  const handleRedirectByRole = (roles) => {
-    if(roles.includes("Admin") && roles.length === 1)
-    {
-      navigate("/dashboard");
-    }else if(roles.includes("User") && roles.length === 1)
-    {
-      navigate("/user");
-    }else if(roles.includes("Admin") && roles.includes("User"))
-    {
-      //implement choosing role page...
-      navigate("/dashboard");
-    }else{
-      navigate("/login");
-    }
-  }
-
 
 
   const handleVerifyJwt = (token) => {
@@ -59,7 +41,6 @@ export default function App() {
       console.log("check role",res.data.user.roles);
       setUserData(user);
       setIsLoading(false);
-      // handleRedirectByRole(user.roles);
     }).catch(err => {
       setIsLoading(false);
       console.log(err)
@@ -67,8 +48,6 @@ export default function App() {
   }
 
   useEffect(() => {  
-    let isMounted = true;
-   
     var token = Cookies.get("jwt");
     if(!token) {
       setUserData(null);
@@ -76,21 +55,7 @@ export default function App() {
     };
     //have token
     handleVerifyJwt(token);
-
-    return () => {
-      isMounted = false;
-    }
   }, []);
-
-  const handleRegister = () => {
-    axios.post("https://localhost:7210/register", {
-      email: "user002@gmail.com",
-      password: "147896aA@",
-      confirmedpassword: "147896aA@",
-      role: "User",
-    })
-    .then(res => console.log(res))
-  }
 
   // 1. reload... userData empty... render private route... 
 

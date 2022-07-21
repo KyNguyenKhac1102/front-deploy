@@ -1,8 +1,8 @@
-import React from 'react'
-import { useFormik, useFormikContext } from 'formik';
+import { useFormikContext } from 'formik';
+import React from 'react';
 
 export default function UploadFiles({name}) {
-    const {setFieldValue, values} = useFormikContext();
+    const {setFieldValue} = useFormikContext();
 
   return (
     <div className="form-group">

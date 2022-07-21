@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 import LoginForm from './components/LoginForm';
-import useLoginState from '../../CustomHooks/useLoginState';
-import { Navigate } from 'react-router';
 
 export default function LoginPage({setUserData, userData, setIsAuthenticated, isLoading, setIsLoading}) {
 
