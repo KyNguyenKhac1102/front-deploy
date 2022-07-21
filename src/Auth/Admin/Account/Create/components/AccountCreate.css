@@ -1,0 +1,15 @@
+.AccountCreateMain
+{
+    display: flex;
+    justify-content: center;
+    flex: auto;
+}
+
+.form-container
+{
+    height: 550px;
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px 30px 30px 30px;
+    margin-top: 30px
+}

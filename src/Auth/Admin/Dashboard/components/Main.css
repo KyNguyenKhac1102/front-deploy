@@ -1,0 +1,75 @@
+.main-container
+{
+    flex: auto;
+    background-color: aqua;
+    height: 100%;
+}
+
+.box-container
+{
+    display: flex;
+    justify-content: space-around;
+    height: 20%;
+    background-color: goldenrod;
+}
+
+.box
+{
+    width: 300px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.label
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    background-color: grey;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: cursive, sans-serif;
+}
+
+.detail-container 
+{
+    height: 60%;
+    font-size: x-large;
+    font-weight: bold;
+    font-family: monospace, sans-serif;
+}
+
+#count-hoso
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.count
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: azure;;
+    height: 60%;
+}
+
+.detail
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+}
+
+.chart-container
+{
+    position: relative;
+    height: 80vh;
+    width: 80vw;
+    padding-left: 50px;
+}
