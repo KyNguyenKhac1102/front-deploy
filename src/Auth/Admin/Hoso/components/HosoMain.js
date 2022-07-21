@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import { DataGrid } from '@mui/x-data-grid';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 
@@ -70,11 +70,14 @@ export default function HosoMain() {
 
   // console.log("hoso DATA", data)
 
-  const config = {
+
+const config = useMemo(() => {
+  return {
     headers: {
-        "Authorization" : `Bearer ${token}`
-    }
-}
+      "Authorization" : `Bearer ${token}`
+  }
+  }
+}, [])
 
 const serverDelete = (id) => {
   axios.delete(`https://localhost:7210/api/StudentInfo/${id}`, config)

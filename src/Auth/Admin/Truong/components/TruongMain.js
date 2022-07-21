@@ -42,6 +42,8 @@ export default function TruongMain() {
     });
 
     console.log("loadugas", loading)
+    console.log("loadugas", setSort)
+    console.log("loadugas", setSearch)
     // console.log("resmain", response);
 
     // let rows = [];
