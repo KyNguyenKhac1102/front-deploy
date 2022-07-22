@@ -36,7 +36,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
       }
     
       const handleVerifyJwt = (token) => {
-        axios.get(`http://k3nkx99-001-site1.etempurl.com/login/cookie?jwtString=${token}`, {
+        axios.get(`https://localhost:7210/login/cookie?jwtString=${token}`, {
           headers: {
             'Authorization': "Bearer" + token
           }
@@ -51,10 +51,10 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
     
       const handleLogin = (values) => {
         setIsLoading(true);
-        axios.post("http://k3nkx99-001-site1.etempurl.com/login", values)
+        axios.post("https://localhost:7210/login", values)
         .then(res => {
           console.log("login? ok" ,res); 
-          // Cookies.set("jwt", res.data.message)
+          Cookies.set("jwt", res.data.message)
           // failed with message? - email,password wrong..
           if(res.data.isSuccess === false)
           {
