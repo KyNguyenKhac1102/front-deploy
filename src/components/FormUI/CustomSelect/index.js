@@ -1,9 +1,9 @@
 
 import { MenuItem, TextField } from "@mui/material";
 import { useField, useFormikContext } from "formik";
-import group1ToHop from '../../../Data/group1ToHop.json';
-import group2ToHop from '../../../Data/group2ToHop.json';
-import group3ToHop from '../../../Data/group3ToHop.json';
+import group1ToHop from '../../../data/group1ToHop.json';
+import group2ToHop from '../../../data/group2ToHop.json';
+import group3ToHop from '../../../data/group3ToHop.json';
 
 var r = /\d+/;
 

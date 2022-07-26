@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import { Route, Routes } from "react-router-dom";
-import RegisterPage from './Auth/RegisterPage';
+import RegisterPage from './pages/RegisterPage';
 import Home from './RegisterAdmision/Home';
 
 import Cookies from 'js-cookie';
-import AccessDenied from './Auth/AccessDenied';
+import AccessDenied from './pages/AccessDeniedPage';
 
 import AccountPage from "./Auth/Admin/Account/AccountPage";
 import AccountCreatePage from "./Auth/Admin/Account/Create/AccountCreatePage";
@@ -17,7 +17,7 @@ import LoginPage from './Auth/Login/LoginPage';
 import PrivateRoute from './Auth/Routes/PrivateRoute';
 import PublicRoute from './Auth/Routes/PublicRoute';
 import BackdropCustom from './components/FormUI/Loading/BackdropCustom';
-import NotFound from './NotFound';
+import NotFound from './pages/NotFoundPage';
 
 
 export default function App() {
@@ -31,7 +31,7 @@ export default function App() {
 
   const handleVerifyJwt = (token) => {
     setIsLoading(true);
-    axios.get(`https://localhost:7210/login/cookie`, {
+    axios.get(`https://admission1-api.azurewebsites.net/login/cookie`, {
       headers: {
         'Authorization': "Bearer" + token
       }

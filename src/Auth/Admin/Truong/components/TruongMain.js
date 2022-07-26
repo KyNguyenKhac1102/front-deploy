@@ -35,10 +35,6 @@ export default function TruongMain() {
         axiosInstance: axios,
         method: "GET",
         url: `admin?sortOrder=${sort}&searchTruong=${search}&page=${page}`,
-        requestConfig: {
-            headers: {
-            }
-        }
     });
 
     console.log("loadugas", loading)
