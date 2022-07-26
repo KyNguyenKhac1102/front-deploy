@@ -31,7 +31,7 @@ export default function App() {
 
   const handleVerifyJwt = (token) => {
     setIsLoading(true);
-    axios.get(`https://localhost:7210/login/cookie`, {
+    axios.get(`https://admission1-api.azurewebsites.net/login/cookie`, {
       headers: {
         'Authorization': "Bearer" + token
       }
