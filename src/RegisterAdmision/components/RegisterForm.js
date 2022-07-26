@@ -229,8 +229,8 @@ export default function RegisterForm({userId}) {
 
   // const {data: user} = useHttpClient("https://localhost:7210/login/cookie");
   // setUserData(user);
-  const {data : truongData} = useHttpClient(`https://admission-front.azurewebsites.net/api/Truong?page=${page}&searchTruong=${searchKey}`);
-  const {data : nganhData} = useHttpClient("https://admission-front.azurewebsites.net/api/Nganh");
+  const {data : truongData} = useHttpClient(`https://admission1-api.azurewebsites.net/api/Truong?page=${page}&searchTruong=${searchKey}`);
+  const {data : nganhData} = useHttpClient("https://admission1-api.azurewebsites.net/api/Nganh");
 
   const optionNganh = hanldeJsonData(nganhData);
 

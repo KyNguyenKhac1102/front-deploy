@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 const token = Cookies.get("jwt");
 
-const BASE_URL = "https://admission-front.azurewebsites.net";
+const BASE_URL = "https://admission1-api.azurewebsites.net";
 
 export default axios.create({
     baseURL: BASE_URL,

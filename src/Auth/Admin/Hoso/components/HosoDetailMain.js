@@ -10,7 +10,7 @@ export default function HosoDetailMain() {
     const {id} = useParams();
     const [urls, setUrls] = useState([]);
 
-    const {data} = useHttpClient(`https://admission-front.azurewebsites.net/api/StudentInfo/${id}`);
+    const {data} = useHttpClient(`https://admission1-api.azurewebsites.net/api/StudentInfo/${id}`);
 
 
 
@@ -19,7 +19,7 @@ export default function HosoDetailMain() {
 
     useEffect(() => {
         const getPresignedUrls = () => {
-            axios.post(`https://admission-front.azurewebsites.net/api/AwsS3Upload/presignedUrls`, [
+            axios.post(`https://admission1-api.azurewebsites.net/api/AwsS3Upload/presignedUrls`, [
                 {
                     label: "Anh 3x4",
                     key: data.anh3x4_Key

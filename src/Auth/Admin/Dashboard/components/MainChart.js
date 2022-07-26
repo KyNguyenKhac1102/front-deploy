@@ -44,7 +44,7 @@ export const options = {
 
 
 const MainChart = () => {
-  const {data: hosoperDay} = useHttpClient('https://admission-front.azurewebsites.net/api/TongHop/GetHosoperDay');
+  const {data: hosoperDay} = useHttpClient('https://admission1-api.azurewebsites.net/api/TongHop/GetHosoperDay');
   
   const labels = [0]
   hosoperDay.map((item) => labels.push(item.create_Date));

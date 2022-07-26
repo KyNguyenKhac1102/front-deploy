@@ -46,7 +46,7 @@ export const options = {
 
 
 const ModalDoiTuongChart = () => {
-  const {data: hosoperDoiTuong} = useHttpClient('https://admission-front.azurewebsites.net/api/TongHop/GetHosoperDoiTuong');
+  const {data: hosoperDoiTuong} = useHttpClient('https://admission1-api.azurewebsites.net/api/TongHop/GetHosoperDoiTuong');
   
   const labels = hosoperDoiTuong.map((item) => item.maDoiTuong);
   const hosoCount = hosoperDoiTuong.map((item) => item.hosoCount)

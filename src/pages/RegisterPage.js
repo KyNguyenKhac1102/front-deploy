@@ -24,7 +24,7 @@ const INIT_VALUE = {
 }
 
 const handleRegister = (values) => {
-  axios.post("https://admission-front.azurewebsites.net/register", values)
+  axios.post("https://admission1-api.azurewebsites.net/register", values)
   .then(res => console.log(res))
   .catch(err => console.log(err))
 }

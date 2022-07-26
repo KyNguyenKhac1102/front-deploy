@@ -44,7 +44,7 @@ export default function AccountCreate() {
         setToastState({...toastState ,open: false})
     }
 
-    const {data: roles} = useHttpClient("https://admission-front.azurewebsites.net/roles");
+    const {data: roles} = useHttpClient("https://admission1-api.azurewebsites.net/roles");
     let options = {};
 
     roles.forEach(item => {
@@ -56,7 +56,7 @@ export default function AccountCreate() {
     // ))
 
     const handleCreate = (values) => {
-        axios.post("https://admission-front.azurewebsites.net/account/create", values, {
+        axios.post("https://admission1-api.azurewebsites.net/account/create", values, {
             ...config
         })
         .then(res => {

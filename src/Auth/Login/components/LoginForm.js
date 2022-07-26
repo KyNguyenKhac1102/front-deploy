@@ -36,9 +36,11 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
       }
     
       const handleVerifyJwt = (token) => {
-        axios.get(`https://admission1-api.azurewebsites.net/login/cookie`, {
+        axios.get(`https://localhost:7210/login/cookie`, {
           headers: {
             'Authorization': "Bearer" + token,
+            "Access-Control-Allow-Origin": "*",
+            'Access-Control-Allow-Credentials': true
           }
         }).then(res => {
           console.log("user", res);
@@ -51,7 +53,11 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
     
       const handleLogin = (values) => {
         setIsLoading(true);
-        axios.post("https://admission1-api.azurewebsites.net/login", values)
+        axios.post("https://localhost:7210/login", values, {
+          headers: {
+            'Access-Control-Allow-Credentials': true
+          }
+        })
         .then(res => {
           console.log("login? ok" ,res); 
           // Cookies.set("jwt", res.data.message)

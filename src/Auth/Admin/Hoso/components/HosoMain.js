@@ -80,7 +80,7 @@ const config = useMemo(() => {
 }, [])
 
 const serverDelete = (id) => {
-  axios.delete(`https://admission-front.azurewebsites.net/api/StudentInfo/${id}`, config)
+  axios.delete(`https://admission1-api.azurewebsites.net/api/StudentInfo/${id}`, config)
   .then(res => {
     getServerData();
   })
@@ -89,7 +89,7 @@ const serverDelete = (id) => {
 
 const getServerData = useCallback(() => {
   setLoading(true);
-  axios.get("https://admission-front.azurewebsites.net/api/StudentInfo/hosos", config)
+  axios.get("https://admission1-api.azurewebsites.net/api/StudentInfo/hosos", config)
   .then(res => {
     setTableData(res.data)
     setLoading(false);

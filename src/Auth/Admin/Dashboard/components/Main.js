@@ -7,9 +7,9 @@ import ModalDoiTuong from './ModalDoiTuong';
 import ModalNganh from './ModalNganh';
 
 export default function Main() {
-  const {data : countHoSo} = useHttpClient("https://admission-front.azurewebsites.net/api/TongHop");
-  const {data: hosoNganhHighest} = useHttpClient('https://admission-front.azurewebsites.net/api/TongHop/GetMostHosoperNganh');
-  const {data: hosoDoiTuongHighest} = useHttpClient('https://admission-front.azurewebsites.net/api/TongHop/GetMostHosoperDoiTuong');
+  const {data : countHoSo} = useHttpClient("https://admission1-api.azurewebsites.net/api/TongHop");
+  const {data: hosoNganhHighest} = useHttpClient('https://admission1-api.azurewebsites.net/api/TongHop/GetMostHosoperNganh');
+  const {data: hosoDoiTuongHighest} = useHttpClient('https://admission1-api.azurewebsites.net/api/TongHop/GetMostHosoperDoiTuong');
 
   const [openModalNganh, setOpenModalNganh] = useState(false);
   const [openModalDoiTuong, setOpenModalDoiTuong] = useState(false);
