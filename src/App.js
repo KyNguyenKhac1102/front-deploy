@@ -31,7 +31,7 @@ export default function App() {
 
   const handleVerifyJwt = (token) => {
     setIsLoading(true);
-    axios.get(`https://admission1-api.azurewebsites.net/login/cookie`, {
+    axios.get(`https://admission1-api.azurewebsites.netfdasfas/login/cookiefsa`, {
       headers: {
         'Authorization': "Bearer" + token
       }
