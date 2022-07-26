@@ -5,6 +5,7 @@ import Cookies from 'js-cookie';
 import React, { useState } from 'react';
 import BackdropCustom from '../../../components/FormUI/Loading/BackdropCustom';
 import TextfieldServer from '../../../components/FormUI/TextFieldServer';
+import Toast from '../../../components/FormUI/Toast';
 import "./LoginForm.css";
 
 axios.defaults.withCredentials = true;
@@ -16,7 +17,12 @@ const INIT_LOGIN_STATE = {
 
 export default function LoginForm({setUserData, setIsLoading, isLoading}) {
     const [errMessage, setErrMessage] = useState(null);
-
+    const [toastState, setToastState] = useState({
+      open: false,
+      message: "",
+      type: "info"
+    })
+  
     const handleRedirectByRole = (roles) => {
         if(roles.includes("Admin") && roles.length === 1)
         {
@@ -36,11 +42,9 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
       }
     
       const handleVerifyJwt = (token) => {
-        axios.get(`https://admission1-api.azurewebsites.net/login/cookie`, {
+        axios.get(`https://localhost:7210/login/cookie`, {
           headers: {
             'Authorization': "Bearer" + token,
-            "Access-Control-Allow-Origin": "*",
-            'Access-Control-Allow-Credentials': true
           }
         }).then(res => {
           console.log("user", res);
@@ -53,11 +57,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
     
       const handleLogin = (values) => {
         setIsLoading(true);
-        axios.post("https://admission1-api.azurewebsites.net/login", values, {
-          headers: {
-            'Access-Control-Allow-Credentials': true
-          }
-        })
+        axios.post("https://localhost:7210/login", values)
         .then(res => {
           console.log("login? ok" ,res); 
           // Cookies.set("jwt", res.data.message)
@@ -73,15 +73,28 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
               handleVerifyJwt(token);
               setIsLoading(false);
             }
+            else{
+              setToastState({
+                open: true,
+                message: "Token not found!",
+                type: "error"
+              })
+              setIsLoading(false);
+            }
           }
     
         })  
         .catch(err => console.log("failed login" ,err));
       }
 
+      const handleClose = () => {
+        setToastState({...toastState, open: false})
+      }
+
   return (
     <>
     <BackdropCustom isLoading={isLoading}/>
+    <Toast {...toastState} handleClose={handleClose} />
       <div className='login-wrapper'>
 
       <Formik
