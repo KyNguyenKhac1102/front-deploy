@@ -39,7 +39,6 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
         axios.get(`https://admission1-api.azurewebsites.net/login/cookie`, {
           headers: {
             'Authorization': "Bearer" + token,
-            'Access-Control-Allow-Credentials': true
           }
         }).then(res => {
           console.log("user", res);
@@ -52,11 +51,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
     
       const handleLogin = (values) => {
         setIsLoading(true);
-        axios.post("https://admission1-api.azurewebsites.net/login", values, {
-          headers: {
-            'Access-Control-Allow-Credentials': true
-          }
-        })
+        axios.post("https://admission1-api.azurewebsites.net/login", values)
         .then(res => {
           console.log("login? ok" ,res); 
           // Cookies.set("jwt", res.data.message)

@@ -19,7 +19,7 @@ export default function HosoDetailMain() {
 
     useEffect(() => {
         const getPresignedUrls = () => {
-            axios.post(`https://localhost:7210/api/AwsS3Upload/presignedUrls`, [
+            axios.post(`https://admission-front.azurewebsites.net/api/AwsS3Upload/presignedUrls`, [
                 {
                     label: "Anh 3x4",
                     key: data.anh3x4_Key
