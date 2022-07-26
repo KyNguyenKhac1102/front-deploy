@@ -46,7 +46,7 @@ export const options = {
 
 
 const ModalNganhChart = () => {
-  const {data: hosoperNganh} = useHttpClient('https://localhost:7210/api/TongHop/HosoperNganh');
+  const {data: hosoperNganh} = useHttpClient('https://admission-front.azurewebsites.net/api/TongHop/HosoperNganh');
   
   const labels = hosoperNganh.map((item) => item.maNganh);
   const countperNganh = hosoperNganh.map((item) => item.hosoCount)

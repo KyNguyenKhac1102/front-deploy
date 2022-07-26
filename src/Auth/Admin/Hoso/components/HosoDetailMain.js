@@ -10,7 +10,7 @@ export default function HosoDetailMain() {
     const {id} = useParams();
     const [urls, setUrls] = useState([]);
 
-    const {data} = useHttpClient(`https:localhost:7210/api/StudentInfo/${id}`);
+    const {data} = useHttpClient(`https://admission-front.azurewebsites.net/api/StudentInfo/${id}`);
 
 
 

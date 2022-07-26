@@ -27,7 +27,7 @@ const columns = [
 export default function AccountMain() {
   let navigate = useNavigate();
 
-  const {data, isLoaded} = useHttpClient("https://localhost:7210/accounts");
+  const {data, isLoaded} = useHttpClient("https://admission-front.azurewebsites.net/accounts");
 
 
 
