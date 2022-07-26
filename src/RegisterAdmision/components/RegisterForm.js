@@ -6,9 +6,9 @@ import * as yup from 'yup';
 import SelectWrapper from '../../components/FormUI/Select';
 import Textfield from '../../components/FormUI/Textfield';
 
-import doiTuongUuTien from "../../data/doiTuongUuTien.json";
-import gioiTinh from "../../data/gioiTinh.json";
-import khuVucUuTien from "../../data/khuVucUuTien.json";
+import doiTuongUuTien from "../../Data/doiTuongUuTien.json";
+import gioiTinh from "../../Data/gioiTinh.json";
+import khuVucUuTien from "../../Data/khuVucUuTien.json";
 
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import axios from 'axios';
