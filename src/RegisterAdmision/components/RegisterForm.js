@@ -291,7 +291,7 @@ export default function RegisterForm({userId}) {
         //     console.log(pair[0]+ ', ' + pair[1]); 
         // }
 
-          axios.post("https://localhost:7210/api/StudentInfo", formData, {
+          axios.post("https://admission1-api.azurewebsites.net/api/StudentInfo", formData, {
             //authoize, model status
             headers: {
               "Authorization" : `Bearer ${token}`,
