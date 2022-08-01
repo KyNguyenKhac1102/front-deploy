@@ -1,0 +1,53 @@
+.error401-wrapper
+{
+    width: 850px;
+    height: 450px;
+    margin: 25vh auto;
+    border: 1px solid #cecece;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.dot {
+    height: 350px;
+    width: 350px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.icon-401
+{
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.label401-code
+{
+    font-size: 15em;
+    font-weight: 600;
+    font-family: monospace, sans-serif;
+    text-align: center;
+    color: #1976d2;
+    caret-color: rgba(0,0,0,0);
+}
+
+.content401-code
+{
+    font-size: 24px;
+    font-weight: 500;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.link-401
+{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #1976d2;
+    font-size: 1.6em;
+}

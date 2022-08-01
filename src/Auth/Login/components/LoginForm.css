@@ -20,3 +20,19 @@
 {
     padding: 20px
 }
+
+.login-registerLink
+{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.login-registerLink a
+{
+    text-decoration: none;
+    color: #1a73e8;
+}
+

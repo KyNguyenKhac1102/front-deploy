@@ -1,16 +1,12 @@
-import React from 'react';
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
+  CategoryScale, Chart as ChartJS, Legend, LinearScale, LineElement, PointElement, Title,
+  Tooltip
 } from 'chart.js';
+import React from 'react';
 import { Line } from 'react-chartjs-2';
+import axios from '../../../../api/TongHop';
 import { useHttpClient } from '../../../../CustomHooks/httpClient';
+import useAxios from '../../../../CustomHooks/useAxios';
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +20,7 @@ ChartJS.register(
 
 export const options = {
   responsive: true,
+  maintainAspectRatio: false,
   plugins: {
     legend: {
       position: 'top' ,
@@ -45,10 +42,19 @@ export const options = {
 
 const MainChart = () => {
   const {data: hosoperDay} = useHttpClient('https://admission1-api.azurewebsites.net/api/TongHop/GetHosoperDay');
-  
-  const labels = [0]
-  hosoperDay.map((item) => labels.push(item.create_Date));
-  const countperDay = [0];
+  const [response] = useAxios({
+      axiosInstance: axios,
+      url : "GetHosoperDay",
+      method: "GET",
+  });
+
+  let labels = [];
+  response.forEach(item => labels.push(item.create_Date));
+  let countperDay = [];
+  response.forEach(item => countperDay.push(item.countperDay))
+
+  // const labels = [0]
+  // hosoperDay.map((item) => labels.push(item.create_Date));
   hosoperDay.map((item) => countperDay.push(item.countperDay));
 
   const data = {
@@ -61,12 +67,6 @@ const MainChart = () => {
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
         tension: 0.2
       },
-      // {
-      //   label: 'Dataset 2',
-      //   data: labels,
-      //   borderColor: 'rgb(53, 162, 235)',
-      //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      // },
     ],
     
   };

@@ -3,6 +3,7 @@ import axios from "axios";
 import { Form, Formik } from 'formik';
 import Cookies from 'js-cookie';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import BackdropCustom from '../../../components/FormUI/Loading/BackdropCustom';
 import TextfieldServer from '../../../components/FormUI/TextFieldServer';
 import Toast from '../../../components/FormUI/Toast';
@@ -42,7 +43,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
       }
     
       const handleVerifyJwt = (token) => {
-        axios.get(`https://admission1-api.azurewebsites.net/login/cookie?jwtString=${token}`, {
+        axios.get(`https://admission1-api.azurewebsites.net/api/Auth/login/cookie?jwtString=${token}`, {
           headers: {
             'Authorization': "Bearer" + token,
           }
@@ -57,7 +58,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
     
       const handleLogin = (values) => {
         setIsLoading(true);
-        axios.post("https://admission1-api.azurewebsites.net/login", values)
+        axios.post("https://admission1-api.azurewebsites.net/api/Auth/login", values)
         .then(res => {
           console.log("login? ok" ,res); 
           Cookies.set("jwt", res.data.message)
@@ -117,8 +118,11 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
                 <Grid item xs={12}>
                   <TextfieldServer name="password" label="Password" type="password" serverError={errMessage}/>
                 </Grid>
-                <Grid item xs={12}>
+                <Grid item xs={6}>
                   <Button type="submit" variant="contained">Login</Button>
+                </Grid>
+                <Grid item xs={6} className="login-registerLink">
+                  <Button><Link to="/register"><div>Đăng Ký</div></Link></Button>
                 </Grid>
               </Grid>
             </Form>
