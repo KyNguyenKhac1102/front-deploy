@@ -1,0 +1,43 @@
+.header-wrapper
+{
+    height: 70px;
+    background-color: #0394fc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo
+{
+    font-size: 28px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 10px;
+    caret-color: transparent;
+    color: white
+}
+
+.header-image
+{
+    height: 35px;
+    caret-color: transparent;
+}
+
+.header-label
+{
+    background-color: inherit;
+    height: 70px;
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-logout
+{
+    height: 70px;
+    width: 300px;
+    display: grid;
+    place-items: center;
+    background-color: inherit;
+    color: white;
+}

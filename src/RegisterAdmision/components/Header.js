@@ -1,8 +1,7 @@
-import { AppBar, Box, Button, IconButton, Toolbar, Typography } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu';
-import React from 'react'
+import { Button } from '@mui/material';
 import Cookies from 'js-cookie';
-
+import React from 'react';
+import "./Header.css";
 
 export default function Header({userId}) {
 
@@ -13,24 +12,14 @@ export default function Header({userId}) {
   }
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" >
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="menu"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Dang Ky Xet Tuyen
-          </Typography>
-          {userId ? <Button color='inherit' onClick={handleLogout}>Log out</Button> : <Button color="inherit">Login</Button>}
-        </Toolbar>
-      </AppBar>
-    </Box> 
+    <div className='header-wrapper'>
+      <div className='header-label'>
+          <div className='header-logo'>React</div>
+          <img className='header-image' src='/logo192.png' alt='logo'/>
+      </div>
+      <div className='header-logout'>
+      {userId ? <Button color='inherit' onClick={handleLogout}>Log out</Button> : <Button color="inherit">Login</Button>}
+      </div>
+    </div>
   )
 }

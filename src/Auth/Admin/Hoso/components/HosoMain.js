@@ -128,10 +128,12 @@ export default function HosoMain() {
 
 
   return (
-    <Box sx={{ height: 400, width: '100%', padding: "20px" }}>
-      {error ? error : ""}
-      <Typography>Ho so</Typography>
-      <DataGrid
+
+<div className='main-wrapper'>
+
+  <div>Ho so</div>
+  <div className='main-table'>
+  <DataGrid
         rows={response}
         columns={columns}
         pageSize={5}
@@ -140,7 +142,9 @@ export default function HosoMain() {
         checkboxSelection
         disableSelectionOnClick
       />
-      {/* <Button variant='contained' onClick={() => navigate("/hoso/create")}>Create</Button> */}
-    </Box>
+  </div>
+
+  {/* <Button variant='contained' sx={{marginTop: "10px"}} onClick={() => navigate("/account/create")}>Create</Button> */}
+</div>
   );
 }

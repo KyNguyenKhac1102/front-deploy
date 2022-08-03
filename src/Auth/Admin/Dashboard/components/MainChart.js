@@ -27,7 +27,7 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Line Chart',
+      text: 'Hồ sơ theo ngày',
     },
     scales: {
       y: {
@@ -61,7 +61,7 @@ const MainChart = () => {
     labels,
     datasets: [
       {
-        label: 'Ho so per Day',
+        label: 'Hồ sơ',
         data: countperDay,
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',

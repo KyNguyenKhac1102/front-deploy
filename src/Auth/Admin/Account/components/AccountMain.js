@@ -6,7 +6,7 @@ import useAxiosFunction from '../../../../CustomHooks/useAxiosFunction';
 import axios from '../../../../api/Auth';
 import { useCallback, useEffect, useState } from 'react';
 import Toast from '../../../../components/FormUI/Toast';
-
+import "./AccountMain.css"
 
 
 export default function AccountMain() {
@@ -105,20 +105,22 @@ const handleClose = () => {
 }
 
   return (
-    <Box sx={{ height: 400, width: '100%', padding: "20px" }}>
-      {error ? error : ""}
+    <div className='main-wrapper'>
       <Toast {...toastState} handleClose={handleClose}/>
-      <Typography>Account</Typography>
-      <DataGrid
-        rows={response?.accounts ? response?.accounts : []}
-        columns={columns}
-        pageSize={5}
-        loading={loading}
-        rowsPerPageOptions={[5]}
-        checkboxSelection
-        disableSelectionOnClick
-      />
-      <Button variant='contained' sx={{marginTop: "10px"}} onClick={() => navigate("/account/create")}>Create</Button>
-    </Box>
+        <div>Account</div>
+        <div className='main-table'>
+          <DataGrid
+            rows={response?.accounts ? response?.accounts : []}
+            columns={columns}
+            pageSize={5}
+            loading={loading}
+            rowsPerPageOptions={[5]}
+            checkboxSelection
+            disableSelectionOnClick
+          />
+        </div>
+
+        <Button variant='contained' sx={{marginTop: "10px"}} onClick={() => navigate("/account/create")}>Create</Button>
+    </div>
   );
 }

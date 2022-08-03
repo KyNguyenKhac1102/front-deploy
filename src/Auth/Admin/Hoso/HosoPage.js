@@ -8,7 +8,7 @@ export default function HosoPage({userId}) {
     <div className='wrap-Admin'>
       <Header userId={userId}/>
       <div className='body-container'>
-          <Sidebar className='sidebar-Admin'/>
+          <Sidebar/>
           <HosoMain />
       </div>
     </div>

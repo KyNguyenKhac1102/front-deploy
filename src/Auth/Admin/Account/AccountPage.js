@@ -8,7 +8,7 @@ export default function AccountPage({userId}) {
     <div className='wrap-Admin'>
       <Header userId={userId}/>
       <div className='body-container'>
-          <Sidebar className='sidebar-Admin'/>
+          <Sidebar />
           <AccountMain />
       </div>
     </div>

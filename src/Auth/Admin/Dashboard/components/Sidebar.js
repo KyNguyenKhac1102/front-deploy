@@ -7,6 +7,10 @@ export default function Sidebar() {
   var navigate = useNavigate();
   return (
     <div className='sidebar-Wrapper'>
+        <div className='sidebar-info'>
+          <div>user info</div>
+          <div>Welcome</div>
+        </div>
         <ul className='ul-list'>
             {SidebarData.map((item, key) => (
                 <li className='row-li' 

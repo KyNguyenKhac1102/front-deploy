@@ -9,7 +9,7 @@ export default function Dashboard({userId}) {
     <div className='wrap-Admin'>
       <Header userId={userId}/>
       <div className='body-container'>
-          <Sidebar className='sidebar-Admin'/>
+          <Sidebar/>
           <Main />
       </div>
     </div>

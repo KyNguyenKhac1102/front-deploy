@@ -62,7 +62,7 @@ export default function App() {
 
   return (
     <>
-    <BackdropCustom isLoading={isLoading}/>
+    {/* <BackdropCustom isLoading={isLoading}/> */}
     <Routes>
       <Route path='/register' element={
         <PublicRoute userData={userData}>
