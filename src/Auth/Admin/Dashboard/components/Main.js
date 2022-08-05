@@ -5,8 +5,9 @@ import './Main.css'
 import MainChart from './MainChart';
 import ModalDoiTuong from './ModalDoiTuong';
 import ModalNganh from './ModalNganh';
+import Cookies from 'js-cookie';
 
-export default function Main() {
+export default function Main({userId}) {
   const {data : countHoSo} = useHttpClient("https://admission1-api.azurewebsites.net/api/TongHop");
   const {data: hosoNganhHighest} = useHttpClient('https://admission1-api.azurewebsites.net/api/TongHop/GetMostHosoperNganh');
   const {data: hosoDoiTuongHighest} = useHttpClient('https://admission1-api.azurewebsites.net/api/TongHop/GetMostHosoperDoiTuong');
@@ -20,8 +21,21 @@ export default function Main() {
   const hanldeOpenModalDoiTuong = () => {
     setOpenModalDoiTuong(true);
   }
+
+  const handleLogout = () => {
+    Cookies.remove("jwt");
+    
+    window.location.href = "/login";
+  }
+
   return (
     <div className='main-container'>
+      {/* <div className='main-top-box'>
+        <div className='main-top-content'>
+          <div className='main-welcome'></div>
+          <div className='main-logout'>{userId ? <Button color='inherit' onClick={handleLogout}>Log out</Button> : <Button color="inherit">Login</Button>}</div>
+        </div>
+      </div> */}
       <div className='box-container'>
         <div className='box'>
           <div className='label'>Hồ sơ nhận được</div>

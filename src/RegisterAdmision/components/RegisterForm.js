@@ -249,7 +249,8 @@ export default function RegisterForm({userId}) {
         },
         [theme.breakpoints.up('xs')]: {
           width: "85%" ,margin: "auto",        
-        }
+        },
+        marginTop: "30px !important"
       })}>
         <Formik initialValues={{...INIT_FORM_STATE}} 
         validationSchema={INIT_VALIDATION} 

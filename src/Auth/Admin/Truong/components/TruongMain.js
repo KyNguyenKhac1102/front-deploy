@@ -90,7 +90,7 @@ export default function TruongMain() {
 
   return (
     <div className='main-wrapper'>
-        <div>Account</div>
+        <div>Truong</div>
         <div className='main-table'>
             <DataGrid
                 rows={loading ? [] :rows}

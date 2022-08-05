@@ -9,8 +9,9 @@ export default function Dashboard({userId}) {
     <div className='wrap-Admin'>
       <Header userId={userId}/>
       <div className='body-container'>
+
           <Sidebar/>
-          <Main />
+          <Main userId={userId}/>
       </div>
     </div>
 

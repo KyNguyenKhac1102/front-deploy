@@ -106,6 +106,7 @@ const handleClose = () => {
 
   return (
     <div className='main-wrapper'>
+      
       <Toast {...toastState} handleClose={handleClose}/>
         <div>Account</div>
         <div className='main-table'>

@@ -2,14 +2,44 @@
 {
     flex: auto;
     background-color: aqua;
-    height: calc(100vh - 70px);
+}
+
+.main-top-box
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.main-top-content
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin: 0 30px;
+    /* border: 1px solid grey; */
+    border-radius: 8px;
+    /* background-color: white; */
+}
+
+.main-welcome
+{
+    margin-left: 30px;
+}
+
+.main-logout
+{
+    margin-right: 30px;
 }
 
 .box-container
 {
     display: flex;
     justify-content: space-around;
-    height: 20%;
+    height: 20vh;
     background-color: goldenrod;
 }
 
@@ -69,7 +99,7 @@
 .chart-container
 {
     position: relative;
-    height: 70vh;
+    height: calc(100vh - 20vh - 150px);
     width: 80vw;
     padding-left: 50px;
 }

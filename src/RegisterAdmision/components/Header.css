@@ -1,6 +1,6 @@
 .header-wrapper
 {
-    height: 70px;
+    height: 75px;
     background-color: #0394fc;
     display: flex;
     justify-content: space-between;
@@ -25,19 +25,17 @@
 .header-label
 {
     background-color: inherit;
-    height: 70px;
+    height: 75px;
     width: 250px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #0394fc;
 }
 
 .header-logout
 {
-    height: 70px;
-    width: 300px;
-    display: grid;
-    place-items: center;
+    margin-right: 30px;
     background-color: inherit;
     color: white;
 }

@@ -5,15 +5,16 @@
     background-color: #2F4050;
 }
 
-.sidebar-info
+/* .sidebar-info
 {
     height: 150px;
     background-color: aqua;
 
-}
+} */
 
 .ul-list
 {
+    margin-top: 30px;
     padding: 0;
     margin: 0;
     list-style-type: none;

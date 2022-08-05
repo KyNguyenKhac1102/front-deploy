@@ -8,8 +8,8 @@ export default function Sidebar() {
   return (
     <div className='sidebar-Wrapper'>
         <div className='sidebar-info'>
-          <div>user info</div>
-          <div>Welcome</div>
+          {/* <img className='sidebar-logo' src='/logo192.png' alt='logo'/>
+          <div className='sidebar-logoname'>React</div> */}
         </div>
         <ul className='ul-list'>
             {SidebarData.map((item, key) => (
