@@ -150,13 +150,13 @@ export default function RegisterForm({userId}) {
     ngaySinh: "1999-12-11",
     gioiTinh: "Nam",
     soCCCD: "01111111111111",
-    soDienThoai: "0986576418",
-    email: "kynguyenkhac28@gmail.com",
+    soDienThoai: "098611111111",
+    email: "kynguyenkhac312@gmail.com",
     maDoiTuong: "00",
     maKhuVuc: "3",
-    diaChiHoKhau: "38 Tuong Mai",
+    diaChiHoKhau: "11 xxx",
   
-    diaChiLienHe :"38 Tuong Mai",
+    diaChiLienHe :"11 xxx",
     hoTenBo: "xxx",
     sdtBo: "xxx",
     hoTenMe: "xxx",
@@ -239,7 +239,8 @@ export default function RegisterForm({userId}) {
         [theme.breakpoints.up('xs')]: {
           width: "85%" ,margin: "auto",        
         },
-        marginTop: "30px !important"
+        marginTop: "30px !important",
+        paddingBottom: "70px !important",
       })}>
         <Formik initialValues={{...INIT_FORM_STATE}} 
         validationSchema={INIT_VALIDATION} 

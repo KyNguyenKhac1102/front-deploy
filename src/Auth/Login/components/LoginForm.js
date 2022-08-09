@@ -12,8 +12,8 @@ import "./LoginForm.css";
 axios.defaults.withCredentials = true;
 
 const INIT_LOGIN_STATE = {
-  email: "admin@gmail.com",
-  password: "147896aA@"
+  email: "",
+  password: ""
 }
 
 export default function LoginForm({setUserData, setIsLoading, isLoading}) {
@@ -34,7 +34,6 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
           window.location.href = "/";
         }else if(roles.includes("Admin") && roles.includes("User"))
         {
-          console.log("login re check")
           // navigate("/dashboard");
           window.location.href = "/dashboard";
         }else{
@@ -48,9 +47,9 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
             'Authorization': "Bearer" + token,
           }
         }).then(res => {
-          console.log("user", res);
+          // console.log("user", res);
           let user = res.data.user;
-          console.log("user roles", res.data.user.roles);
+          // console.log("user roles", res.data.user.roles);
           setUserData(user);
           handleRedirectByRole(user.roles);
         });
@@ -60,7 +59,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
         setIsLoading(true);
         axios.post("https://admission1-api.azurewebsites.net/api/Auth/login", values)
         .then(res => {
-          console.log("login? ok" ,res); 
+          // console.log("login? ok" ,res); 
           Cookies.set("jwt", res.data.message)
           // failed with message? - email,password wrong..
           if(res.data.isSuccess === false)

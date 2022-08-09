@@ -79,7 +79,7 @@ export default function App() {
 
       </Route>
       <Route path='/' element= {
-        <PrivateRoute isAllowed={!!userData && (userData.roles.includes("User") || userData.roles.includes("Admin"))} userData={userData}>
+        <PrivateRoute isAllowed={!!userData && (userData.roles.includes("User"))} userData={userData}>
           <Home userId={userData?.id}/>
         </PrivateRoute>
       }></Route>
