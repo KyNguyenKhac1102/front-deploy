@@ -65,11 +65,6 @@ const hanldeJsonData = (data) => {
   return jsonNganh;
 }
 
-// const handleDateTimeFormated = (js_date) => {
-//   var output = "";
-//   js_date.get
-// }
-
 const INIT_VALIDATION = yup.object().shape({
   hoTen: yup.string().required("Required"),
   ngaySinh: yup.date().required("Required").typeError("Date Format"),
@@ -227,18 +222,12 @@ export default function RegisterForm({userId}) {
     setToastState({...toastState, open: false})
   }
 
-  // const {data: user} = useHttpClient("https://localhost:7210/login/cookie");
-  // setUserData(user);
   const {data : truongData} = useHttpClient(`https://admission1-api.azurewebsites.net/api/Truong?page=${page}&searchTruong=${searchKey}`);
   const {data : nganhData} = useHttpClient("https://admission1-api.azurewebsites.net/api/Nganh");
 
   const optionNganh = hanldeJsonData(nganhData);
 
-  // console.log( "isload", isLoaded)
-  // console.log( "error", error)
-  // console.log(
-  //   "userData", userData
-  // )
+
   return (
   
     <ThemeProvider theme={theme}>
@@ -418,11 +407,11 @@ export default function RegisterForm({userId}) {
             </Grid>
             <Grid item xl={2} xs={6}>
               {/* <Textfield name='maTruong10' label="Mã trường" readOnly shrink={false} /> */}
-              <FastField name='maTruong10' label="Mã trường"  component={DependenceField}/>
+              {/* <FastField name='maTruong10' label="Mã trường"  component={DependenceField}/> */}
             </Grid>
             <Grid item xl={2} xs={6}>
               {/* <Textfield name='maTinh10' label="Mã tỉnh" disabled/> */}
-              <FastField name='maTinh10' label="Mã tỉnh" component={DependenceField}/>
+              {/* <FastField name='maTinh10' label="Mã tỉnh" component={DependenceField}/> */}
             </Grid>
 
             <Grid item xl={8} xs={12}>
@@ -431,11 +420,11 @@ export default function RegisterForm({userId}) {
               </Grid>
             <Grid item xl={2} xs={6}>
               {/* <Textfield name='maTruong11' label="Mã trường" disabled/> */}
-              <FastField name='maTruong11' label="Mã trường"  component={DependenceField11}/>
+              {/* <FastField name='maTruong11' label="Mã trường"  component={DependenceField11}/> */}
             </Grid>
             <Grid item xl={2} xs={6}>
               {/* <Textfield name='maTinh11' label="Mã tỉnh" disabled/> */}
-              <FastField name='maTinh11' label="Mã tỉnh"   component={DependenceField11}/>
+              {/* <FastField name='maTinh11' label="Mã tỉnh"   component={DependenceField11}/> */}
             </Grid>
 
             <Grid item xl={8} xs={12}>
@@ -444,11 +433,11 @@ export default function RegisterForm({userId}) {
             </Grid>
             <Grid item xl={2} xs={6}>
               {/* <Textfield name='maTruong12' label="Mã trường" disabled/> */}
-              <FastField name='maTruong12' label="Mã trường"  component={DependenceField12}/>
+              {/* <FastField name='maTruong12' label="Mã trường"  component={DependenceField12}/> */}
             </Grid>
             <Grid item xl={2} xs={6}>
               {/* <Textfield name='maTinh12' label="Mã tỉnh" disabled/> */}
-              <FastField name='maTinh12' label="Mã tỉnh"  component={DependenceField12}/>
+              {/* <FastField name='maTinh12' label="Mã tỉnh"  component={DependenceField12}/> */}
             </Grid>
 
           <Grid item xl={12} xs={12} sx={{display: "flex", alignItems: "center", gap: "10px"}}>
@@ -528,7 +517,7 @@ export default function RegisterForm({userId}) {
               </Button>
           </Grid>
         </Grid>
-        <pre>{JSON.stringify({values, errors}, null, 2)}</pre>
+        {/* <pre>{JSON.stringify({values, errors}, null, 2)}</pre> */}
         </Form>
          )}
 
