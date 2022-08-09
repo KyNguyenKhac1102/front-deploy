@@ -12,8 +12,8 @@ import "./LoginForm.css";
 axios.defaults.withCredentials = true;
 
 const INIT_LOGIN_STATE = {
-  email: "",
-  password: ""
+  email: "admin@gmail.com",
+  password: "147896aA@"
 }
 
 export default function LoginForm({setUserData, setIsLoading, isLoading}) {
