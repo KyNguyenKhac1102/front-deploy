@@ -17,12 +17,12 @@ export const SidebarData = [
     },
     {
         icon: <HistoryEduIcon />,
-        title: "Ho So",
+        title: "Hồ Sơ",
         link: "/hoso",
     },
     {
         icon: <SchoolIcon />,
-        title: "Truong",
+        title: "Trường",
         link: "/truong",
     },
 ]

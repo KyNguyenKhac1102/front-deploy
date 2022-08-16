@@ -12,7 +12,7 @@ import "./LoginForm.css";
 axios.defaults.withCredentials = true;
 
 const INIT_LOGIN_STATE = {
-  email: "admin@gmail.com",
+  email: "test_admin@gmail.com",
   password: "147896aA@"
 }
 
@@ -123,10 +123,11 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
                 <Grid item xs={6} className="login-registerLink">
                   <Button><Link to="/register"><div>Đăng Ký</div></Link></Button>
                 </Grid>
+                <Grid item xs={12}>
+                    usersite ** k3nkx@gmail.com **
+                </Grid>
               </Grid>
             </Form>
-   
-
           </Formik>
           </div>
 
