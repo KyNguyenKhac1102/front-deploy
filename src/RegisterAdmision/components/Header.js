@@ -14,7 +14,7 @@ export default function Header({userId}) {
   return (
     <div className='header-wrapper'>
       <div className='header-label'>
-          <div className='header-logo'>Đăng ký xét tuyển</div>
+          <div className='header-logo'>React</div>
           <img className='header-image' src='/logo192.png' alt='logo'/>
       </div>
       <div className='header-logout'>
