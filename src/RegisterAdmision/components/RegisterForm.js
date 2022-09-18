@@ -332,28 +332,28 @@ export default function RegisterForm({userId}) {
           </Grid>
 
           <Grid item xl={5} xs={12} sm={12}>
-            <FastField name='hoTen' label="Họ và tên" placeholder="Vd: TRAN PHUONG" component={CustomField}/>
+            <FastField name='hoTen' label="Họ và tên" placeholder="Vd: TRẦN PHƯƠNG" component={CustomField}/>
           </Grid>
           <Grid item xl={2} xs={12} sm={12}>
           
             {/* <Textfield name='ngaySinh' label="Ngày sinh" type='date' InputLabelProps={{shrink: true}}/> */}
-            <CustomDatePicker name="ngaySinh" label="Ngay Sinh"/>
+            <CustomDatePicker name="ngaySinh" label="Ngày sinh"/>
           </Grid>
           <Grid item xl={2} xs={6} sm={12}>
             <SelectWrapper name='gioiTinh' label="Giới tính" options={gioiTinh}/>
           </Grid>
           <Grid item xl={3} xs={6} sm={12}>
             {/* <Textfield name='soCCCD' label="Số CMND/CCCD"/> */}
-            <FastField name='soCCCD' label="Số CMND/CCCD" placeholder="Nhap CMND/CCCD" component={CustomField}/>
+            <FastField name='soCCCD' label="Số CMND/CCCD" placeholder="Nhập CMND/CCCD" component={CustomField}/>
           </Grid>
 
           <Grid item xl={5} xs={12}>
             {/* <Textfield name='soDienThoai' label="Số điện thoại"/> */}
-            <FastField name='soDienThoai' label="Số điện thoại" placeholder="Nhap So Dien thoai" component={CustomField}/>
+            <FastField name='soDienThoai' label="Số điện thoại" placeholder="Nhập Số điện thoại" component={CustomField}/>
           </Grid>
           <Grid item xl={4} xs={12}>
             {/* <Textfield name='email' label="Email"/> */}
-            <FastField name='email' label="Email" placeholder="Nhap Email" component={CustomField}/>
+            <FastField name='email' label="Email" placeholder="Nhập Email" component={CustomField}/>
           </Grid>
           <Grid item xl={3} xs={6}>
             <SelectWrapper name='maDoiTuong' label="Đối tượng" options={doiTuongUuTien}/>
@@ -364,7 +364,7 @@ export default function RegisterForm({userId}) {
           </Grid>
           <Grid item xl={7} xs={12}>
             {/* <Textfield name='diaChiHoKhau' label="Địa chỉ Hộ Khẩu"/> */}
-            <FastField name='diaChiHoKhau' label="Địa chỉ Hộ Khẩu" placeholder="Nhap Dia Chi Ho Khau" component={CustomField}/>
+            <FastField name='diaChiHoKhau' label="Địa chỉ Hộ Khẩu" placeholder="Nhập Địa chỉ hộ khẩu" component={CustomField}/>
           </Grid>
 
           <Grid item xl={12} xs={12} sx={{display: "flex", alignItems: "center", gap: "10px"}}>
@@ -375,25 +375,25 @@ export default function RegisterForm({userId}) {
 
             <Grid item xl={12} xs={12}>
               {/* <Textfield name='diaChiLienHe' label="Địa chỉ liên hệ"/> */}
-              <FastField name='diaChiLienHe' label="Địa chỉ liên hệ" placeholder="Nhap Dia Chi Lien He" component={CustomField}/>
+              <FastField name='diaChiLienHe' label="Địa chỉ liên hệ" placeholder="Nhập Địa chỉ liên hệ" component={CustomField}/>
             </Grid>
 
             <Grid item xl={8} xs={6}>
               {/* <Textfield name='hoTenBo' label="Họ tên bố"/> */}
-              <FastField name='hoTenBo' label="Họ tên bố" placeholder="Nhap Ho Ten Bo" component={CustomField}/>
+              <FastField name='hoTenBo' label="Họ tên bố" placeholder="Nhập Họ tên bố" component={CustomField}/>
             </Grid>
             <Grid item xl={4} xs={6}>
               {/* <Textfield name='sdtBo' label="Số điện thoại bố" /> */}
-              <FastField name='sdtBo' label="Số điện thoại bố" placeholder="Nhap SDt Bo" component={CustomField}/>
+              <FastField name='sdtBo' label="Số điện thoại bố" placeholder="Nhập Số điện thoại bố" component={CustomField}/>
             </Grid>
 
             <Grid item xl={8} xs={6}>
               {/* <Textfield name='hoTenMe' label="Họ tên mẹ" /> */}
-              <FastField name='hoTenMe' label="Họ tên mẹ" placeholder="Nhap Ho Ten Me" component={CustomField}/>
+              <FastField name='hoTenMe' label="Họ tên mẹ" placeholder="Nhập Họ tên mẹ " component={CustomField}/>
             </Grid>
             <Grid item xl={4} xs={6}>
               {/* <Textfield name='sdtMe' label="Số điện thoại mẹ" /> */}
-              <FastField name='sdtMe' label="Số điện thoại mẹ" placeholder="Nhap Sdt Me" component={CustomField}/>
+              <FastField name='sdtMe' label="Số điện thoại mẹ" placeholder="Nhập Số điện thoại Mẹ" component={CustomField}/>
             </Grid>
 
           <Grid item xl={12} xs={12} sx={{display: "flex", alignItems: "center", gap: "10px"}}>
@@ -455,16 +455,16 @@ export default function RegisterForm({userId}) {
                     
                     <Grid container item spacing={2} key={index} >
                       <Grid item xl={1} xs={3}>
-                        <Textfield name={`studentNguyenVongsDto[${index}].stt`} label="Nguyen Vong" 
+                        <Textfield name={`studentNguyenVongsDto[${index}].stt`} label="Nguyện vọng" 
                         inputProps={{readOnly: true, style: {
                           textAlign: "center"
                         }}} value={index + 1} />
                       </Grid>
                       <Grid item xl={5} xs={4}>
-                        <SelectWrapper name={`studentNguyenVongsDto[${index}].maNganh`} label="Nganh" options={optionNganh}/>
+                        <SelectWrapper name={`studentNguyenVongsDto[${index}].maNganh`} label="Ngành" options={optionNganh}/>
                       </Grid>
                       <Grid item xl={2} xs={4}>
-                        <CustomSelect name={`studentNguyenVongsDto[${index}].maToHop`}label="To Hop" component={<FastField />}/>
+                        <CustomSelect name={`studentNguyenVongsDto[${index}].maToHop`}label="Tổ Hợp" component={<FastField />}/>
                         {/* <FastField name={`studentNguyenVongsDto[${index}.maToHop]`}label="To Hop" component={CustomSelect} /> */}
                       </Grid>
                       <Grid item xl={1} xs={1}>
@@ -475,7 +475,7 @@ export default function RegisterForm({userId}) {
                   <Grid item>
                     <Button size='large' variant='contained' color='primary' onClick={(index) => {
                       push(emptyNv)
-                    }}>Them nguyen vong</Button>
+                    }}>THÊM NGUYỆN VỌNG</Button>
                   </Grid>
                 </>
                 
@@ -493,23 +493,23 @@ export default function RegisterForm({userId}) {
           </Grid>
 
           <Grid item xl={12} sx={{display: "flex", alignItems: "center", gap: "10px"}}>
-            <label >Anh 3x4 (jpg)</label>
+            <label >Ảnh 3x4 (jpg)</label>
               <UploadFiles name="files.AnhThe3x4_JPG"/>
           </Grid>
           <Grid item xl={12} sx={{display: "flex", alignItems: "center", gap: "10px"}}>
-              <label >Anh CMND/CCCD (jpg)</label>
+              <label >Ảnh CMND/CCCD (jpg)</label>
               <UploadFiles name="files.CMND_JPG"/>
           </Grid>
           <Grid item xl={12} sx={{display: "flex", alignItems: "center", gap: "10px"}}>
-              <label >Scan Doi Tuong uu tien (pdf)</label>
+              <label >Bản Scan Đối tượng ưu tiên (pdf)</label>
               <UploadFiles name="files.DoiTuong_PDF"/>
           </Grid>
           <Grid item xl={12} sx={{display: "flex", alignItems: "center", gap: "10px"}}>
-          <label >Scan Khu Vuc uu tien (pdf)</label>
+          <label >Bản Scan Khu vực ưu tiên(pdf)</label>
               <UploadFiles name="files.KhuVuc_PDF"/>
           </Grid>
           <Grid item xl={12} sx={{display: "flex", alignItems: "center", gap: "10px"}}>
-          <label >Scan Hoc Ba (pdf)</label>
+          <label >Bản Scan học bạ (pdf)</label>
               <UploadFiles name="files.HocBa_PDF"/>
           </Grid>
           <Grid item>

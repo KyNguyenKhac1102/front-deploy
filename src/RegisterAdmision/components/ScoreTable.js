@@ -131,16 +131,16 @@ export default function ScoreTable({values}) {
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
             <TableRow>
-            <TableCell>Mon Hoc</TableCell>
-            <TableCell align="right">Diem Lop 10</TableCell>
-            <TableCell align="right">Diem Lop 11</TableCell>
-            <TableCell align="right">Diem Lop 12</TableCell>
+            <TableCell>Môn học</TableCell>
+            <TableCell align="right">Điểm Lớp 10</TableCell>
+            <TableCell align="right">Điểm Lớp 11</TableCell>
+            <TableCell align="right">Điểm Lớp 12</TableCell>
             </TableRow>
         </TableHead>
         <TableBody>
             {listRender.includes('T') ? 
                 <TableRow >
-                    <TableCell>Toan</TableCell>
+                    <TableCell>Toán</TableCell>
                     <TableCell><FastField name='diemToan10' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
                     <TableCell><FastField name='diemToan11' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
                     <TableCell><FastField name='diemToan12' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
@@ -150,7 +150,7 @@ export default function ScoreTable({values}) {
             }
             {listRender.includes('L') ? 
                 <TableRow >
-                    <TableCell>Ly</TableCell>
+                    <TableCell>Lý</TableCell>
                     <TableCell><FastField name='diemLy10' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
                     <TableCell><FastField name='diemLy11' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
                     <TableCell><FastField name='diemLy12' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
@@ -160,7 +160,7 @@ export default function ScoreTable({values}) {
             }
             {listRender.includes('H') ? 
                 <TableRow >
-                    <TableCell>Hoa</TableCell>
+                    <TableCell>Hóa</TableCell>
                     <TableCell><FastField name='diemHoa10' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
                     <TableCell><FastField name='diemHoa11' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
                     <TableCell><FastField name='diemHoa12' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
@@ -180,7 +180,7 @@ export default function ScoreTable({values}) {
             }
             {listRender.includes('V') ? 
                 <TableRow >
-                    <TableCell>Van</TableCell>
+                    <TableCell>Văn</TableCell>
                     <TableCell><FastField name='diemVan10' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
                     <TableCell><FastField name='diemVan11' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>
                     <TableCell><FastField name='diemVan12' type="number" inputProps={{min: 0, max: 10, step: 0.1}} component={CustomField}/></TableCell>

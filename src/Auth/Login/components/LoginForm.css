@@ -36,3 +36,16 @@
     color: #1a73e8;
 }
 
+.login-note
+{
+    text-align: center;
+    background-color: #bdfffc;
+    padding: 5px;
+    font-size: 18px;
+    color: rgb(10, 72, 98);
+}
+
+.login-or
+{
+    text-align: center;
+}

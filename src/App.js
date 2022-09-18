@@ -59,6 +59,7 @@ export default function App() {
 
   // 1. reload... userData empty... render private route... 
 
+  console.log("userdata", !!userData);
 
   return (
     <>

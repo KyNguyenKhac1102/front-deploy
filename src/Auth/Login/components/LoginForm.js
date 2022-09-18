@@ -12,8 +12,8 @@ import "./LoginForm.css";
 axios.defaults.withCredentials = true;
 
 const INIT_LOGIN_STATE = {
-  email: "test_admin@gmail.com",
-  password: "147896aA@"
+  email: "demoAdmin@gmail.com",
+  password: "123456aA@"
 }
 
 export default function LoginForm({setUserData, setIsLoading, isLoading}) {
@@ -124,7 +124,19 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
                   <Button><Link to="/register"><div>Đăng Ký</div></Link></Button>
                 </Grid>
                 <Grid item xs={12}>
-                    usersite ** k3nkx@gmail.com **
+                    <div>
+                      <div className='login-note'>
+                      One user can only register one time so please register to access user page.
+                      </div>
+                      <div className='login-or'>
+                      or 
+                      </div>
+                      <div className='login-note'>
+                      You can use <b>demo@gmail.com</b> and password <b>123456aA@</b> if noone already register.
+                      </div>
+                      
+                    </div>
+                    
                 </Grid>
               </Grid>
             </Form>

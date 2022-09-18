@@ -14,8 +14,7 @@ export default function Header({userId}) {
   return (
     <div className='header-wrapper'>
       <div className='header-label'>
-          <div className='header-logo'>React</div>
-          <img className='header-image' src='/logo192.png' alt='logo'/>
+          <div className='header-logo'>Đăng ký xét tuyển</div>
       </div>
       <div className='header-logout'>
       {userId ? <Button color='inherit' onClick={handleLogout}>Log out</Button> : <Button color="inherit">Login</Button>}
