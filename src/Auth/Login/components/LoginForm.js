@@ -12,7 +12,7 @@ import "./LoginForm.css";
 axios.defaults.withCredentials = true;
 
 const INIT_LOGIN_STATE = {
-  email: "demoAdmin@gmail.com",
+  email: "demo@gmail.com",
   password: "123456aA@"
 }
 
@@ -132,7 +132,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
                       or 
                       </div>
                       <div className='login-note'>
-                      You can use <b>demo@gmail.com</b> and password <b>123456aA@</b> if noone already register.
+                      You can use <b>demoAdmin@gmail.com</b> and password <b>123456aA@</b> to access Admin site
                       </div>
                       
                     </div>
