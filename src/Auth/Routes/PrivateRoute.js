@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navigate, Outlet } from 'react-router';
 
-export default function PrivateRoute ({userData ,isAllowed, children, redirectPath = '/accessdenied'}){
+export default function PrivateRoute ({userData ,isAllowed, children, redirectPath = '/login'}){
 
   // console.log("-----------USERDATA" ,userData);
   //when reload? userData==null ---fix
