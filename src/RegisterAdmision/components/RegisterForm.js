@@ -517,6 +517,11 @@ export default function RegisterForm({userId}) {
               {isSubmitting ?<Typography fontWeight="bolder" fontSize="larger">Đăng Ký...</Typography>: <Typography fontWeight="bolder" fontSize="larger">Đăng Ký</Typography>}
               </Button>
           </Grid>
+          <Grid item>
+          <div className='login-note'>
+                      One user can only register one time so if you want to please logout and register an account.
+                      </div>
+          </Grid>
         </Grid>
         {/* <pre>{JSON.stringify({values, errors}, null, 2)}</pre> */}
         </Form>

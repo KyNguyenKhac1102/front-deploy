@@ -125,12 +125,12 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
                 </Grid>
                 <Grid item xs={12}>
                     <div>
-                      <div className='login-note'>
+                      {/* <div className='login-note'>
                       One user can only register one time so please register to access user page.
                       </div>
                       <div className='login-or'>
                       or 
-                      </div>
+                      </div> */}
                       <div className='login-note'>
                       You can use <b>demoAdmin@gmail.com</b> and password <b>123456aA@</b> to access Admin site
                       </div>
