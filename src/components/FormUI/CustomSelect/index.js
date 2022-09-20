@@ -38,7 +38,6 @@ const CustomSelect = ({ name, options, component ,...otherProps }) => {
   const index = parseInt(name.match(r)[0]);
   const tenNganhValue = values.studentNguyenVongsDto[index].maNganh;
   let disabled = false;
-  console.log("TEN NGANH CHOOSEE", tenNganhValue);
 
   options = handleNganhToHop(tenNganhValue, options);
   if(options.length === 0)

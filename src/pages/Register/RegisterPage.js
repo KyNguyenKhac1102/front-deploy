@@ -69,7 +69,6 @@ export default function RegisterPage() {
             initialValues={INIT_VALUE}
             validationSchema={INIT_VALIDATE}
             onSubmit={(values) => {
-              console.log(values)
               handleRegister(values);
             }}
           >

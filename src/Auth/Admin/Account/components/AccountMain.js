@@ -72,28 +72,6 @@ export default function AccountMain() {
     getServerData();
   }, [])
 
-  // const serverDelete = (email) => {
-  //   axios.delete(`https://admission1-api.azurewebsites.net/${id}`, config)
-  //   .then(res => {
-  //     getServerData();
-  //   })
-  //   .catch(err => console.log(err))
-  // }
-  
-  // const getServerData = useCallback(() => {
-  //   setLoading(true);
-  //   axios.get("https://admission1-api.azurewebsites.net/accounts", config)
-  //   .then(res => {
-  //     setTableData(res.data)
-  //     setLoading(false);
-  //   })
-  //   .catch(err => console.log(err));
-  // }, [config])
-  
-  //   useEffect(() => {
-  //     getServerData();
-  //   }, [setTableData, getServerData])
-
   const [toastState, setToastState] = useState({
     open: false,
     message: "",

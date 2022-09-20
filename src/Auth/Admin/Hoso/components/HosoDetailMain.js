@@ -12,11 +12,6 @@ export default function HosoDetailMain() {
 
     const {data} = useHttpClient(`https://admission1-api.azurewebsites.net/api/StudentInfo/${id}`);
 
-
-
-    console.log("URLS", urls)
-
-
     useEffect(() => {
         const getPresignedUrls = () => {
             axios.post(`https://admission1-api.azurewebsites.net/api/AwsS3Upload/presignedUrls`, [
@@ -42,14 +37,14 @@ export default function HosoDetailMain() {
                 }
             ])
             .then(res => {setUrls(res.data)
-            console.log("res" ,res)})
+            })
             .catch(err => console.log(err))
         }
     
 
         if(data.length !== 0)
         {
-            console.log( "dsa",data);
+            
             getPresignedUrls();
         }
 

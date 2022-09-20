@@ -3,18 +3,6 @@ import { Navigate, Outlet } from 'react-router';
 
 export default function PrivateRoute ({userData ,isAllowed, children, redirectPath = '/login'}){
 
-  // console.log("-----------USERDATA" ,userData);
-  //when reload? userData==null ---fix
-
-  // if(userData === undefined)
-  // {
-  //   return <></>;
-  // }
-  // else if(userData === null)
-  // {
-  //   return <Navigate to={redirectPath} replace/>
-  // }
-
   if(!isAllowed && userData === undefined)
   {
     return <></>

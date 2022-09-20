@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router';
 
 export default function PublicRoute({userData, children}) {
     let navigate = useNavigate()
-    console.log(userData);
     useEffect(() => {
       var roles;
       if(userData !== undefined && !!userData)
@@ -17,7 +16,6 @@ export default function PublicRoute({userData, children}) {
           navigate("/");
         }else if(roles.includes("Admin") && roles.includes("User"))
         {
-          console.log("pub check")
           //implement choosing role page...
           navigate("/dashboard");
         }else{

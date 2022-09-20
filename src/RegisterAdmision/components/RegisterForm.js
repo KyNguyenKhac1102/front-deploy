@@ -248,13 +248,11 @@ export default function RegisterForm({userId}) {
 
           values.create_At = new Date().toLocaleDateString();
           values.update_At = new Date().toLocaleDateString();
-          
-          console.log("date------", values.create_At.format);
+        
           var formData = new FormData();
 
           for(var key in values)
           {
-            // console.log("key", values[key])
             if(Array.isArray(values[key]))
             {
               var len = values[key].length;
@@ -266,7 +264,6 @@ export default function RegisterForm({userId}) {
             }
             else if(key === "files")
             {
-              console.log("----------file", values[key]);
               var item = values[key];
               for(var filekey in item)
               {
@@ -277,10 +274,6 @@ export default function RegisterForm({userId}) {
               formData.append(key, values[key]);
             }
           }
-        //   console.log("---------------", formData.values);
-        //   for (var pair of formData.entries()) {
-        //     console.log(pair[0]+ ', ' + pair[1]); 
-        // }
 
           axios.post("https://admission1-api.azurewebsites.net/api/StudentInfo", formData, {
             //authoize, model status
@@ -295,7 +288,6 @@ export default function RegisterForm({userId}) {
           })
           .then(res => {
             setSubmitting(false)
-            console.log("upload", res)
             setToastState({
               open: true,
               message: res.data.message,

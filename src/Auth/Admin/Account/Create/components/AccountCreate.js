@@ -83,7 +83,6 @@ export default function AccountCreate() {
     <div className='AccountCreateMain'>
         <Toast {...toastState} handleClose={handleClose}/>
         <Formik initialValues={{...INIT_VALUE}} validationSchema={INIT_VALIDATE} onSubmit={(values) => {
-            console.log(values)
             handleCreate(values);
         }}>
             {({values, errors}) => (

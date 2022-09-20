@@ -50,7 +50,6 @@ const ModalNganhChart = () => {
   
   const labels = hosoperNganh.map((item) => item.maNganh);
   const countperNganh = hosoperNganh.map((item) => item.hosoCount)
-  console.log("perDay", countperNganh);
 
   const data = {
     labels,

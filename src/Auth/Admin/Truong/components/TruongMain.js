@@ -52,31 +52,6 @@ export default function TruongMain() {
         getServerData();
     }, [sort, search, page])
 
-    console.log("loading", loading)
-    // console.log("loadugas", setSort)
-    // console.log("loadugas", setSearch)
-    // console.log("resmain", response);
-
-    // let rows = [];
-    // let rowCount = 0;
-    // if(response !== null)
-    // {
-    //     rows = response?.truongs;
-    //     rowCount = response?.pageCount;
-    // }
-        
-
-    // let rows = [];
-    // let rowCount = 0;
-
-    // if(truongData?.truongs !== undefined)
-    // {
-    //     rows = truongData.truongs;
-    //     rowCount = truongData.pageCount;
-    // }
-    // console.log("truongdata", rows);
-
-
     let rows = [];
     let rowCount = 0;
 
@@ -85,8 +60,6 @@ export default function TruongMain() {
         rows = response?.truongs;
         rowCount = response?.pageCount;
     }
-    // console.log("LOADING...", loading)
-
 
   return (
     <div className='main-wrapper'>

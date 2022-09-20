@@ -70,7 +70,6 @@ export default function AutoCompleteWrapper({
           setSearchKey(value);
         }}
         onChange={(_, newValue) => {          
-          console.log(newValue);
           setSearchKey("");
             if(newValue === null)
             {

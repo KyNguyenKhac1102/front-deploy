@@ -50,7 +50,6 @@ const ModalDoiTuongChart = () => {
   
   const labels = hosoperDoiTuong.map((item) => item.maDoiTuong);
   const hosoCount = hosoperDoiTuong.map((item) => item.hosoCount)
-  console.log("perDay", hosoCount);
 
   const data = {
     labels,

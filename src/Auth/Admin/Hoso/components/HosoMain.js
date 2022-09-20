@@ -63,13 +63,6 @@ export default function HosoMain() {
     }
   ]
   
-
-  // const [tableData, setTableData] = useState([]);
-  // const [loading, setLoading] = useState(false);
-  // const {data, isLoaded} = useHttpClient("https://localhost:7210/api/StudentInfo/hosos");
-
-  // console.log("hoso DATA", data)
-
   const [response, loading, error, axiosFetch] = useAxiosFunction();
 
   const getServerData = () => {

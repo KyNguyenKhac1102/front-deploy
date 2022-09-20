@@ -36,14 +36,11 @@ export default function App() {
         'Authorization': "Bearer" + token
       }
     }).then(res => {
-      console.log("check", res);
       let user = res.data.user;
-      console.log("check role",res.data.user.roles);
       setUserData(user);
       setIsLoading(false);
     }).catch(err => {
       setIsLoading(false);
-      console.log(err)
     });
   }
 
@@ -58,9 +55,6 @@ export default function App() {
   }, []);
 
   // 1. reload... userData empty... render private route... 
-
-  console.log("userdata", !!userData);
-
   return (
     <>
     {/* <BackdropCustom isLoading={isLoading}/> */}

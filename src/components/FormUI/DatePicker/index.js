@@ -35,7 +35,6 @@ const CustomDatePicker = ({
             // helperText={meta.error}
             onChange={(newValue) => {
               formik.setFieldValue(name , newValue.toLocaleDateString());
-              console.log("DATE PICERK", newValue.toLocaleDateString());  
             }}
                       renderInput={(params) => (
               <TextField

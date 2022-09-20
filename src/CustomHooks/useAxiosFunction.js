@@ -9,7 +9,6 @@ const useAxiosFunction = () =>
 
     const axiosFetch = async (configObj) => {
         const {axiosInstance, url, method, requestConfig, setToastState} = configObj;
-        console.log(configObj)
         try
         {
             setLoading(true);
@@ -19,7 +18,6 @@ const useAxiosFunction = () =>
                 ...requestConfig,
                 signal: ctrl.signal
             });
-            console.log("res log", res)
             if(method === "DELETE" || method === "POST")
             {
                 setToastState({
@@ -40,7 +38,6 @@ const useAxiosFunction = () =>
                     type: "error"
                 })
             }
-            console.log("error log", err)
             setError(err)
         }
         finally

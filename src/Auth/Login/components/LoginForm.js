@@ -47,9 +47,7 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
             'Authorization': "Bearer" + token,
           }
         }).then(res => {
-          // console.log("user", res);
           let user = res.data.user;
-          // console.log("user roles", res.data.user.roles);
           setUserData(user);
           handleRedirectByRole(user.roles);
         });
@@ -59,7 +57,6 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
         setIsLoading(true);
         axios.post("https://admission1-api.azurewebsites.net/api/Auth/login", values)
         .then(res => {
-          // console.log("login? ok" ,res); 
           Cookies.set("jwt", res.data.message)
           // failed with message? - email,password wrong..
           if(res.data.isSuccess === false)
@@ -101,7 +98,6 @@ export default function LoginForm({setUserData, setIsLoading, isLoading}) {
       <Formik
             initialValues={INIT_LOGIN_STATE}
             onSubmit={(values) => {
-              console.log(values);
               handleLogin(values);
             }}
           >
